@@ -43,7 +43,6 @@ Locales['en'] = {
     ['cannot_adjust_walks'] = "You cannot adjust walking styles.",
     ['cannot_adjust_expressions'] = "You cannot adjust facial expressions.",
     ['cannot_adjust_shared'] = "You cannot adjust shared emotes.",
-    ['must_start_emote_first'] = "You must start an emote first.",
     ['cannot_adjust_in_vehicle'] = "You cannot adjust an emote while in a vehicle.",
     ['cannot_adjust'] = "This emote does not support positioning.",
     ['position_saved'] = "Emote position has been saved.",

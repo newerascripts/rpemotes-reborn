@@ -8,6 +8,17 @@ local positioningCache = {}
 local function startPositioningMode(name)
     local playerPed = PlayerPedId()
     local emoteData = EmoteData[name]
+    local attempts = 10
+
+    while LocalPlayer.state.currentEmote ~= name and attempts > 0 do
+        Wait(100)
+        attempts = attempts - 1
+        if attempts == 0 then
+            SimpleNotify(Translate('must_start_emote_first'), 'error')
+            return false
+        end
+    end
+
     if not emoteData then
         SimpleNotify(Translate('emote_data_not_found'), 'error')
         return false
@@ -25,11 +36,6 @@ local function startPositioningMode(name)
     
     if emoteData.category == "Shared" then
         SimpleNotify(Translate('cannot_adjust_shared'), 'error')
-        return false
-    end
-
-    if not LocalPlayer.state.currentEmote or LocalPlayer.state.currentEmote ~= name then
-        SimpleNotify(Translate('must_start_emote_first'), 'error')
         return false
     end
 
