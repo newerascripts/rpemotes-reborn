@@ -25,6 +25,13 @@ ui_page 'html/dist/index.html'
 
 data_file 'CONDITIONAL_ANIMS_FILE' 'conditionalanims.meta'
 
+escrow_ignore {
+  '**/*.lua',
+  'stream/**/*.yft',
+  'stream/**/*.ydr',
+  'stream/**/*.ydd',
+}
+
 shared_scripts {
     'types.lua',
     'config.lua',
