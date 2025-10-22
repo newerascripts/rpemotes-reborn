@@ -9,12 +9,17 @@ if Config.IdleAnimationsEnabled then
 
         while true do
             if not CanDoAction() then
-                Citizen.Wait(5000)
+                Citizen.Wait(10000)
                 goto continue
             end
 
             if IsPedInAnyVehicle(PlayerPedId()) then
-                Citizen.Wait(5000)
+                Citizen.Wait(10000)
+                goto continue
+            end
+            
+            if LocalPlayer.state.currentEmote then
+                Citizen.Wait(10000)
                 goto continue
             end
             Citizen.Wait(idleTimer)
