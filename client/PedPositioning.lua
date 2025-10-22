@@ -1,7 +1,3 @@
--- =================================================================
--- FINAL LUA SCRIPT (V15 - True Sync, Correct Movement & Camera Toggle)
--- =================================================================
-
 local isPositioningMode = false
 local positioningCache = {}
 
@@ -188,7 +184,6 @@ RegisterNUICallback('cancelPositioning', function(_, cb)
     cb('ok') 
 end)
 
--- Događaj koji server šalje SVIM klijentima
 RegisterNetEvent('rpemotes:client:updatePlayerPosition', function(targetServerId, newCoords, newHeading)
     local localPlayerId = GetPlayerServerId(PlayerId())
     if targetServerId ~= localPlayerId then
