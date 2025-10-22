@@ -1,15 +1,15 @@
 
 RegisterNetEvent('rpemotes:server:syncPosition', function(newCoords, newHeading)
     local src = source
-    -- Emituj svim klijentima OSIM onome ko je poslao
     TriggerClientEvent('rpemotes:client:updatePlayerPosition', -1, src, newCoords, newHeading)
 end)
 
--- Kada klijent poništi poziciju, vrati ga na originalnu poziciju za sve
 RegisterNetEvent('rpemotes:server:resetPosition', function(originalCoords, originalHeading)
     local src = source
     TriggerClientEvent('rpemotes:client:updatePlayerPosition', -1, src, originalCoords, originalHeading)
-end)RegisterNetEvent("rpemotes:server:requestEmote", function(target, emotename, etype)
+end)
+
+RegisterNetEvent("rpemotes:server:requestEmote", function(target, emotename, etype)
     local source = source
     if not Player(source).state.canEmote then return end
 
@@ -174,13 +174,11 @@ RegisterCommand("emoteextract", function(source, args)
     ExtractEmoteProps(args[1])
 end, true)
 
--- Ped Animation Positioning Sync Events
 RegisterNetEvent('rpemotes:server:syncPosition', function(newCoords, newHeading)
     local src = source
     TriggerClientEvent('rpemotes:client:updatePlayerPosition', -1, src, newCoords, newHeading)
 end)
 
--- Kada klijent poništi poziciju, vrati ga na originalnu poziciju za sve
 RegisterNetEvent('rpemotes:server:resetPosition', function(originalCoords, originalHeading)
     local src = source
     TriggerClientEvent('rpemotes:client:updatePlayerPosition', -1, src, originalCoords, originalHeading)
